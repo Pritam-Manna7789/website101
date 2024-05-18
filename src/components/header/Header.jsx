@@ -59,9 +59,11 @@ const Header = ({ type }) => {
             <FontAwesomeIcon icon={faCar} />
             <span>Stays</span>
           </div>
-          <div className="headerListItem">
+          <div className="headerListItem" onClick={()=>{
+            navigate("/hotels",{})
+          }}>
             <FontAwesomeIcon icon={faBed} />
-            <span>Hostels</span>
+            <span>Hotels</span>
           </div>
           <div className="headerListItem">
             <FontAwesomeIcon icon={faCar} />
