@@ -3,6 +3,7 @@ import {
   faCalendarDays,
   faCar,
   faPerson,
+  faHouse,
   faPlane,
   faTaxi,
 } from "@fortawesome/free-solid-svg-icons";
@@ -55,17 +56,19 @@ const Header = ({ type }) => {
         }
       >
         <div className="headerList">
-          <div className="headerListItem active">
-            <FontAwesomeIcon icon={faCar} />
-            <span>Stays</span>
+          <div className="headerListItem active" onClick={()=>{
+            navigate("/",{})
+          }}>
+            <FontAwesomeIcon icon={faHouse} />
+            <span>Home</span>
           </div>
           <div className="headerListItem" onClick={()=>{
             navigate("/hotels",{})
           }}>
             <FontAwesomeIcon icon={faBed} />
-            <span>Hotels</span>
+            <span>Hostels</span>
           </div>
-          <div className="headerListItem">
+          {/* <div className="headerListItem">
             <FontAwesomeIcon icon={faCar} />
             <span>Car rentals</span>
           </div>
@@ -76,7 +79,7 @@ const Header = ({ type }) => {
           <div className="headerListItem">
             <FontAwesomeIcon icon={faTaxi} />
             <span>Airport taxis</span>
-          </div>
+          </div> */}
         </div>
         {type !== "list" && (
           <>
@@ -87,7 +90,10 @@ const Header = ({ type }) => {
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free Lamabooking account
             </p>
-            <button className="headerBtn">Sign in / Register</button>
+            <button className="headerBtn" onClick={()=>{
+            navigate("/register",{})
+          }}
+            >Sign in / Register</button>
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faBed} className="headerIcon" />
